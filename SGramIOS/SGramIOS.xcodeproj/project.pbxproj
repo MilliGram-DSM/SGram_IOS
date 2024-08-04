@@ -1,0 +1,452 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6FD250392C5DDF7400026975 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD250382C5DDF7400026975 /* AppDelegate.swift */; };
+		6FD2503B2C5DDF7400026975 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD2503A2C5DDF7400026975 /* SceneDelegate.swift */; };
+		6FD2503D2C5DDF7400026975 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD2503C2C5DDF7400026975 /* ViewController.swift */; };
+		6FD250422C5DDF7500026975 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FD250412C5DDF7500026975 /* Assets.xcassets */; };
+		6FD250452C5DDF7500026975 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6FD250442C5DDF7500026975 /* Base */; };
+		6FD2504D2C5DE07900026975 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD2504C2C5DE07900026975 /* LoginViewController.swift */; };
+		6FD250552C5DE14800026975 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6FD250542C5DE14800026975 /* SnapKit */; };
+		6FD250582C5DE14D00026975 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 6FD250572C5DE14D00026975 /* Then */; };
+		6FD2505A2C5DE1CD00026975 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD250592C5DE1CD00026975 /* ViewModel.swift */; };
+		6FFDA1A42C5E20C5007EC0EF /* SGLoginTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDA1A32C5E20C5007EC0EF /* SGLoginTitleLabel.swift */; };
+		6FFDA1A62C5E21EC007EC0EF /* SGLoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDA1A52C5E21EC007EC0EF /* SGLoginTextField.swift */; };
+		6FFDA1A82C5E3AC4007EC0EF /* SGLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDA1A72C5E3AC4007EC0EF /* SGLoginButton.swift */; };
+		6FFDA1AA2C5E6146007EC0EF /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDA1A92C5E6146007EC0EF /* SignupViewController.swift */; };
+		6FFDA1AC2C5E6270007EC0EF /* SGSuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDA1AB2C5E6270007EC0EF /* SGSuggestionView.swift */; };
+		6FFDA1AE2C5E65CC007EC0EF /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDA1AD2C5E65CC007EC0EF /* UserInfoViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6FD250352C5DDF7400026975 /* SGramIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGramIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FD250382C5DDF7400026975 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6FD2503A2C5DDF7400026975 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		6FD2503C2C5DDF7400026975 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6FD250412C5DDF7500026975 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6FD250442C5DDF7500026975 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6FD250462C5DDF7500026975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FD2504C2C5DE07900026975 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6FD250592C5DE1CD00026975 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		6FFDA1A32C5E20C5007EC0EF /* SGLoginTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGLoginTitleLabel.swift; sourceTree = "<group>"; };
+		6FFDA1A52C5E21EC007EC0EF /* SGLoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGLoginTextField.swift; sourceTree = "<group>"; };
+		6FFDA1A72C5E3AC4007EC0EF /* SGLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGLoginButton.swift; sourceTree = "<group>"; };
+		6FFDA1A92C5E6146007EC0EF /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		6FFDA1AB2C5E6270007EC0EF /* SGSuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGSuggestionView.swift; sourceTree = "<group>"; };
+		6FFDA1AD2C5E65CC007EC0EF /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6FD250322C5DDF7400026975 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FD250552C5DE14800026975 /* SnapKit in Frameworks */,
+				6FD250582C5DE14D00026975 /* Then in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6FD2502C2C5DDF7400026975 = {
+			isa = PBXGroup;
+			children = (
+				6FD250372C5DDF7400026975 /* SGramIOS */,
+				6FD250362C5DDF7400026975 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6FD250362C5DDF7400026975 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6FD250352C5DDF7400026975 /* SGramIOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6FD250372C5DDF7400026975 /* SGramIOS */ = {
+			isa = PBXGroup;
+			children = (
+				6FD2504F2C5DE0CB00026975 /* Delegate */,
+				6FD2504E2C5DE0B600026975 /* Auth */,
+				6FD250522C5DE11B00026975 /* Core */,
+				6FD250432C5DDF7500026975 /* LaunchScreen.storyboard */,
+				6FD250412C5DDF7500026975 /* Assets.xcassets */,
+				6FD250462C5DDF7500026975 /* Info.plist */,
+				6FD250592C5DE1CD00026975 /* ViewModel.swift */,
+			);
+			path = SGramIOS;
+			sourceTree = "<group>";
+		};
+		6FD2504E2C5DE0B600026975 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				6FD2503C2C5DDF7400026975 /* ViewController.swift */,
+				6FD2504C2C5DE07900026975 /* LoginViewController.swift */,
+				6FFDA1A92C5E6146007EC0EF /* SignupViewController.swift */,
+				6FFDA1AD2C5E65CC007EC0EF /* UserInfoViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		6FD2504F2C5DE0CB00026975 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				6FD250382C5DDF7400026975 /* AppDelegate.swift */,
+				6FD2503A2C5DDF7400026975 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		6FD250522C5DE11B00026975 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				6FFDA1A32C5E20C5007EC0EF /* SGLoginTitleLabel.swift */,
+				6FFDA1A52C5E21EC007EC0EF /* SGLoginTextField.swift */,
+				6FFDA1A72C5E3AC4007EC0EF /* SGLoginButton.swift */,
+				6FFDA1AB2C5E6270007EC0EF /* SGSuggestionView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6FD250342C5DDF7400026975 /* SGramIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FD250492C5DDF7500026975 /* Build configuration list for PBXNativeTarget "SGramIOS" */;
+			buildPhases = (
+				6FD250312C5DDF7400026975 /* Sources */,
+				6FD250322C5DDF7400026975 /* Frameworks */,
+				6FD250332C5DDF7400026975 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SGramIOS;
+			packageProductDependencies = (
+				6FD250542C5DE14800026975 /* SnapKit */,
+				6FD250572C5DE14D00026975 /* Then */,
+			);
+			productName = SGramIOS;
+			productReference = 6FD250352C5DDF7400026975 /* SGramIOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6FD2502D2C5DDF7400026975 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					6FD250342C5DDF7400026975 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 6FD250302C5DDF7400026975 /* Build configuration list for PBXProject "SGramIOS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6FD2502C2C5DDF7400026975;
+			packageReferences = (
+				6FD250532C5DE14800026975 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				6FD250562C5DE14D00026975 /* XCRemoteSwiftPackageReference "Then" */,
+			);
+			productRefGroup = 6FD250362C5DDF7400026975 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6FD250342C5DDF7400026975 /* SGramIOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6FD250332C5DDF7400026975 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FD250422C5DDF7500026975 /* Assets.xcassets in Resources */,
+				6FD250452C5DDF7500026975 /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6FD250312C5DDF7400026975 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FFDA1AC2C5E6270007EC0EF /* SGSuggestionView.swift in Sources */,
+				6FFDA1AA2C5E6146007EC0EF /* SignupViewController.swift in Sources */,
+				6FD2504D2C5DE07900026975 /* LoginViewController.swift in Sources */,
+				6FD2503D2C5DDF7400026975 /* ViewController.swift in Sources */,
+				6FFDA1A62C5E21EC007EC0EF /* SGLoginTextField.swift in Sources */,
+				6FFDA1AE2C5E65CC007EC0EF /* UserInfoViewController.swift in Sources */,
+				6FD250392C5DDF7400026975 /* AppDelegate.swift in Sources */,
+				6FD2505A2C5DE1CD00026975 /* ViewModel.swift in Sources */,
+				6FFDA1A82C5E3AC4007EC0EF /* SGLoginButton.swift in Sources */,
+				6FD2503B2C5DDF7400026975 /* SceneDelegate.swift in Sources */,
+				6FFDA1A42C5E20C5007EC0EF /* SGLoginTitleLabel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6FD250432C5DDF7500026975 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6FD250442C5DDF7500026975 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6FD250472C5DDF7500026975 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6FD250482C5DDF7500026975 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6FD2504A2C5DDF7500026975 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SGramIOS/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jihoon.SGramIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6FD2504B2C5DDF7500026975 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SGramIOS/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jihoon.SGramIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6FD250302C5DDF7400026975 /* Build configuration list for PBXProject "SGramIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FD250472C5DDF7500026975 /* Debug */,
+				6FD250482C5DDF7500026975 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FD250492C5DDF7500026975 /* Build configuration list for PBXNativeTarget "SGramIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FD2504A2C5DDF7500026975 /* Debug */,
+				6FD2504B2C5DDF7500026975 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6FD250532C5DE14800026975 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		6FD250562C5DE14D00026975 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6FD250542C5DE14800026975 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6FD250532C5DE14800026975 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		6FD250572C5DE14D00026975 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6FD250562C5DE14D00026975 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 6FD2502D2C5DDF7400026975 /* Project object */;
+}
