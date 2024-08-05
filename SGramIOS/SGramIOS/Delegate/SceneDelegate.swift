@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         
-        let viewController = SignupViewController()
+        let viewController = chatViewController()
         
         window?.rootViewController = viewController
         

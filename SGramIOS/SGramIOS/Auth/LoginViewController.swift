@@ -7,9 +7,10 @@ class LoginViewController: UIViewController {
     
     let  viewModel = ViewModel()
     
-    private let titleLabel = SGLoginTitleLabel(text: "로그인")
+    private let titleLabel = SGLoginTitleLabel(text: "회원가입")
     private let idInputTF = SGLoginTextField(type: .id)
     private let pwInputTF = SGLoginTextField(type: .pw)
+    
     private let loginbutton = SGLoginButton().then {
         $0.addTarget(nil, action: #selector(loginButtontap), for: .touchUpInside)
 
