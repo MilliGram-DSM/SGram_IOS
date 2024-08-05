@@ -15,8 +15,6 @@
 		6FD250422C5DDF7500026975 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FD250412C5DDF7500026975 /* Assets.xcassets */; };
 		6FD250452C5DDF7500026975 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6FD250442C5DDF7500026975 /* Base */; };
 		6FD2504D2C5DE07900026975 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD2504C2C5DE07900026975 /* LoginViewController.swift */; };
-		6FD250552C5DE14800026975 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6FD250542C5DE14800026975 /* SnapKit */; };
-		6FD250582C5DE14D00026975 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 6FD250572C5DE14D00026975 /* Then */; };
 		6FD2505A2C5DE1CD00026975 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD250592C5DE1CD00026975 /* ViewModel.swift */; };
 		6FFDA1A42C5E20C5007EC0EF /* SGLoginTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDA1A32C5E20C5007EC0EF /* SGLoginTitleLabel.swift */; };
 		6FFDA1A62C5E21EC007EC0EF /* SGLoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDA1A52C5E21EC007EC0EF /* SGLoginTextField.swift */; };
@@ -50,9 +48,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< Updated upstream
 				6FD250552C5DE14800026975 /* SnapKit in Frameworks */,
 				6FD250582C5DE14D00026975 /* Then in Frameworks */,
 				6F30F7902C60D5A8004C79E1 /* SocketIO in Frameworks */,
+=======
+>>>>>>> Stashed changes
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +139,12 @@
 			);
 			name = SGramIOS;
 			packageProductDependencies = (
+<<<<<<< Updated upstream
 				6FD250542C5DE14800026975 /* SnapKit */,
 				6FD250572C5DE14D00026975 /* Then */,
 				6F30F78F2C60D5A8004C79E1 /* SocketIO */,
+=======
+>>>>>>> Stashed changes
 			);
 			productName = SGramIOS;
 			productReference = 6FD250352C5DDF7400026975 /* SGramIOS.app */;
@@ -171,9 +175,14 @@
 			);
 			mainGroup = 6FD2502C2C5DDF7400026975;
 			packageReferences = (
+<<<<<<< Updated upstream
 				6FD250532C5DE14800026975 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				6FD250562C5DE14D00026975 /* XCRemoteSwiftPackageReference "Then" */,
 				6F30F78E2C60D5A8004C79E1 /* XCRemoteSwiftPackageReference "socket" */,
+=======
+				90A1A2422C5FBF18008E4A3B /* XCRemoteSwiftPackageReference "Then" */,
+				90A1A2432C5FBF1E008E4A3B /* XCRemoteSwiftPackageReference "SnapKit" */,
+>>>>>>> Stashed changes
 			);
 			productRefGroup = 6FD250362C5DDF7400026975 /* Products */;
 			projectDirPath = "";
@@ -425,6 +434,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+<<<<<<< Updated upstream
 		6F30F78E2C60D5A8004C79E1 /* XCRemoteSwiftPackageReference "socket" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
@@ -442,6 +452,9 @@
 			};
 		};
 		6FD250562C5DE14D00026975 /* XCRemoteSwiftPackageReference "Then" */ = {
+=======
+		90A1A2422C5FBF18008E4A3B /* XCRemoteSwiftPackageReference "Then" */ = {
+>>>>>>> Stashed changes
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
 			requirement = {
@@ -449,7 +462,16 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		90A1A2432C5FBF1E008E4A3B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
+<<<<<<< Updated upstream
 
 /* Begin XCSwiftPackageProductDependency section */
 		6F30F78F2C60D5A8004C79E1 /* SocketIO */ = {
@@ -468,6 +490,8 @@
 			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
+=======
+>>>>>>> Stashed changes
 	};
 	rootObject = 6FD2502D2C5DDF7400026975 /* Project object */;
 }

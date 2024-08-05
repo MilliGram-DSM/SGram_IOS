@@ -1,5 +1,5 @@
+import Snapkit
 import UIKit
-import SnapKit
 import Then
 import Foundation
 
