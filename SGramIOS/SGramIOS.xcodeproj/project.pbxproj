@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F1E30452C632C940049E868 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1E30442C632C940049E868 /* MainViewController.swift */; };
 		6F30F7902C60D5A8004C79E1 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 6F30F78F2C60D5A8004C79E1 /* SocketIO */; };
 		6F30F7922C60D5D4004C79E1 /* chatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F30F7912C60D5D4004C79E1 /* chatViewController.swift */; };
 		6FD250392C5DDF7400026975 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD250382C5DDF7400026975 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F1E30442C632C940049E868 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6F30F7912C60D5D4004C79E1 /* chatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatViewController.swift; sourceTree = "<group>"; };
 		6FD250352C5DDF7400026975 /* SGramIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGramIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FD250382C5DDF7400026975 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				6FFDA1A92C5E6146007EC0EF /* SignupViewController.swift */,
 				6FFDA1AD2C5E65CC007EC0EF /* UserInfoViewController.swift */,
 				6F30F7912C60D5D4004C79E1 /* chatViewController.swift */,
+				6F1E30442C632C940049E868 /* MainViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FFDA1AC2C5E6270007EC0EF /* SGSuggestionView.swift in Sources */,
+				6F1E30452C632C940049E868 /* MainViewController.swift in Sources */,
 				6FFDA1AA2C5E6146007EC0EF /* SignupViewController.swift in Sources */,
 				6FD2504D2C5DE07900026975 /* LoginViewController.swift in Sources */,
 				6FD2503D2C5DDF7400026975 /* ViewController.swift in Sources */,
