@@ -117,12 +117,13 @@
 		6FD3F1A82C63B0D500435961 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				6FD3F1CB2C63B8E800435961 /* New Group */,
+				6FD3F1C82C63B8AC00435961 /* Signup */,
+				6FD3F1C72C63B89D00435961 /* Login */,
 				6FD3F1B42C63B18300435961 /* DesignSystem */,
 				6F9DD3912C63AA5F00B8BFE4 /* ViewController.swift */,
 				6FD3F1A92C63B10400435961 /* ChatViewController.swift */,
-				6FD3F1AB2C63B11500435961 /* LoginViewController.swift */,
 				6FD3F1AD2C63B12500435961 /* MainViewController.swift */,
-				6FD3F1AF2C63B14100435961 /* SignupViewController.swift */,
 				6FD3F1B12C63B16800435961 /* UserInfoViewController.swift */,
 				6FD3F1BD2C63B22900435961 /* ViewModel.swift */,
 			);
@@ -138,6 +139,29 @@
 				6FD3F1BB2C63B1B800435961 /* SGSuggestionView.swift */,
 			);
 			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		6FD3F1C72C63B89D00435961 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6FD3F1AB2C63B11500435961 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6FD3F1C82C63B8AC00435961 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				6FD3F1AF2C63B14100435961 /* SignupViewController.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		6FD3F1CB2C63B8E800435961 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

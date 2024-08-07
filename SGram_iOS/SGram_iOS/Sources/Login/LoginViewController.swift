@@ -7,7 +7,8 @@ class LoginViewController: UIViewController {
     
     let  viewModel = ViewModel()
     
-    private let titleLabel = SGLoginTitleLabel(text: "회원가입")
+    
+    private let titleLabel = SGLoginTitleLabel(text: "로그인")
     private let idInputTF = SGLoginTextField(type: .id)
     private let pwInputTF = SGLoginTextField(type: .pw)
     
@@ -15,13 +16,20 @@ class LoginViewController: UIViewController {
         $0.addTarget(nil, action: #selector(loginButtontap), for: .touchUpInside)
 
     }
-    private let suggestionView = SGSuggestionView(message: "아직 가입안했냐?", buttonTitle: "회원가입")
-       
+    private let suggestionView = SGSuggestionView(message: "회원가입을 안했다면?", buttonTitle: "회원가입")
     
     
+    private let SignupButton = UIButton().then {
+        $0.setTitle("회원가입하러가기", for: .highlighted)
+        $0.addTarget(nil, action: #selector(goSignup), for: .touchUpInside)
+    }
+    
+    @objc func goSignup() {
+        self.navigationController?.pushViewController(SignupViewController(), animated: true)
+    }
     
     @objc func loginButtontap(){
-        self.navigationController?.pushViewController(SignupViewController(), animated: true)
+        self.navigationController?.pushViewController(MainViewController(), animated: true)
     }
     
   

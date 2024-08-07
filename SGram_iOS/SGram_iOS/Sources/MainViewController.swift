@@ -16,6 +16,14 @@ class MainViewController: UIViewController {
    override func viewDidLoad() {
        super.viewDidLoad()
        
+       view.backgroundColor = .white
+       
+       view.addSubview(moveButton)
+       
+       moveButton.snp.makeConstraints {
+           $0.centerX.centerY.equalToSuperview()
+           
+       }
        
    }
 }

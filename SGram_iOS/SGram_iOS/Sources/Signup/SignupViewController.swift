@@ -7,10 +7,9 @@ class SignupViewController: UIViewController {
     private let titleLabel = SGLoginTitleLabel(text: "회원가입")
     private let idInputTF = SGLoginTextField(type: .id)
     private let pwInputTF = SGLoginTextField(type: .pw)
-    private let suggestionView = SGSuggestionView(message: "벌써 가입했다고 뿌슝빠슝?", buttonTitle: "그럼 로그인ㄱㄱ")
+    private let suggestionView = SGSuggestionView(message: "벌써 가입했다면?", buttonTitle: "로그인")
     private let nextbutton = SGLoginButton().then {
         $0.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
-        
     }
     
     let numberLabel2 = UILabel().then {

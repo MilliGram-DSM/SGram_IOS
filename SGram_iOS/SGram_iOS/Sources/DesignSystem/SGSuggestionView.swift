@@ -1,7 +1,6 @@
 import UIKit
 import SnapKit
 import Then
-import Foundation
 
 class SGSuggestionView: UIView {
     
@@ -15,6 +14,7 @@ class SGSuggestionView: UIView {
     private let moveButton = UIButton(type: .system).then {
         $0.setTitleColor(.blue, for: .normal)
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
+        $0.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
     }
     
     init(message: String, buttonTitle: String) {
@@ -24,15 +24,11 @@ class SGSuggestionView: UIView {
         moveButton.setTitle(buttonTitle, for: .normal)
         
         [messageLabel, moveButton].forEach { addSubview($0) }
-        
-        
-        moveButton.addTarget(self, action: #selector(moveButtonTapped), for: .touchUpInside)
     }
     
-    @objc func moveButtonTapped() {
+    @objc func nextButtonPressed(_ sender: UIButton) {
         buttonTapped?()
     }
-    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -50,10 +46,9 @@ class SGSuggestionView: UIView {
             $0.left.equalTo(messageLabel.snp.right).offset(4)
             $0.right.equalToSuperview()
         }
-        
     }
     
-        public func setButtonTappedAction(buttonTapped: @escaping () -> Void) {
-            self.buttonTapped = buttonTapped
-        }
+    public func setButtonTappedAction(buttonTapped: @escaping () -> Void) {
+        self.buttonTapped = buttonTapped
+    }
 }

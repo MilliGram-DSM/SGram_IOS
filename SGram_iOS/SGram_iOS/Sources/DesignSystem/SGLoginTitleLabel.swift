@@ -14,7 +14,7 @@ class SGLoginTitleLabel: UILabel {
         super.init(frame: .zero)
         
         
-        label.text = "\(text)해라!"
+        label.text = "\(text)을 하세요!"
         layout()
     }
     
