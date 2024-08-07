@@ -12,7 +12,6 @@
 		6F9DD3922C63AA5F00B8BFE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9DD3912C63AA5F00B8BFE4 /* ViewController.swift */; };
 		6F9DD3972C63AA6000B8BFE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F9DD3962C63AA6000B8BFE4 /* Assets.xcassets */; };
 		6F9DD39A2C63AA6000B8BFE4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6F9DD3992C63AA6000B8BFE4 /* Base */; };
-		6FD3F19E2C63AFCC00435961 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6FD3F19D2C63AFCC00435961 /* SnapKit */; };
 		6FD3F1A12C63AFD700435961 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 6FD3F1A02C63AFD700435961 /* Then */; };
 		6FD3F1A42C63B07700435961 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 6FD3F1A32C63B07700435961 /* SocketIO */; };
 		6FD3F1AA2C63B10400435961 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD3F1A92C63B10400435961 /* ChatViewController.swift */; };
@@ -25,6 +24,7 @@
 		6FD3F1BA2C63B1AE00435961 /* SGLoginTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD3F1B92C63B1AE00435961 /* SGLoginTitleLabel.swift */; };
 		6FD3F1BC2C63B1B800435961 /* SGSuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD3F1BB2C63B1B800435961 /* SGSuggestionView.swift */; };
 		6FD3F1BE2C63B22900435961 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD3F1BD2C63B22900435961 /* ViewModel.swift */; };
+		6FD3F1C62C63B7B800435961 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6FD3F1C52C63B7B800435961 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FD3F19E2C63AFCC00435961 /* SnapKit in Frameworks */,
+				6FD3F1C62C63B7B800435961 /* SnapKit in Frameworks */,
 				6FD3F1A12C63AFD700435961 /* Then in Frameworks */,
 				6FD3F1A42C63B07700435961 /* SocketIO in Frameworks */,
 			);
@@ -157,9 +157,9 @@
 			);
 			name = SGram_iOS;
 			packageProductDependencies = (
-				6FD3F19D2C63AFCC00435961 /* SnapKit */,
 				6FD3F1A02C63AFD700435961 /* Then */,
 				6FD3F1A32C63B07700435961 /* SocketIO */,
+				6FD3F1C52C63B7B800435961 /* SnapKit */,
 			);
 			productName = SGram_iOS;
 			productReference = 6F9DD38A2C63AA5F00B8BFE4 /* SGram_iOS.app */;
@@ -190,9 +190,9 @@
 			);
 			mainGroup = 6F9DD3812C63AA5F00B8BFE4;
 			packageReferences = (
-				6FD3F19C2C63AFCC00435961 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				6FD3F19F2C63AFD700435961 /* XCRemoteSwiftPackageReference "Then" */,
 				6FD3F1A22C63B07700435961 /* XCRemoteSwiftPackageReference "socket" */,
+				6FD3F1C42C63B7B800435961 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 6F9DD38B2C63AA5F00B8BFE4 /* Products */;
 			projectDirPath = "";
@@ -445,14 +445,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		6FD3F19C2C63AFCC00435961 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.7.1;
-			};
-		};
 		6FD3F19F2C63AFD700435961 /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
@@ -469,14 +461,17 @@
 				kind = branch;
 			};
 		};
+		6FD3F1C42C63B7B800435961 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6FD3F19D2C63AFCC00435961 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6FD3F19C2C63AFCC00435961 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
 		6FD3F1A02C63AFD700435961 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6FD3F19F2C63AFD700435961 /* XCRemoteSwiftPackageReference "Then" */;
@@ -486,6 +481,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6FD3F1A22C63B07700435961 /* XCRemoteSwiftPackageReference "socket" */;
 			productName = SocketIO;
+		};
+		6FD3F1C52C63B7B800435961 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6FD3F1C42C63B7B800435961 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
