@@ -60,7 +60,6 @@ class SGLoginTextField: UIView {
             break
         case .pw:
             textField.isSecureTextEntry = true
-          
             textField.rightViewMode = .always
         case .tel:
             textField.keyboardType = .numberPad

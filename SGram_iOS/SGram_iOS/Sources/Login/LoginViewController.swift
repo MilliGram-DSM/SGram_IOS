@@ -44,9 +44,7 @@ class LoginViewController: UIViewController {
         
         loginbutton.buttonTitle = "로그인"
         
-      
         
-
         view.backgroundColor = .white
         layout()
     }

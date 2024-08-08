@@ -9,6 +9,7 @@ class MainViewController: UIViewController {
        $0.backgroundColor = .blue
        $0.setTitle("채팅하러가기", for: .normal)
        $0.setTitleColor(.brown, for: .focused)
+       $0.tintColor = .black
    }
     
     @objc func buttonDidTap() {

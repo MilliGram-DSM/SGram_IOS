@@ -66,6 +66,7 @@ class chatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         messages.append("나: \(text)")
         
         
+        
         tableView.reloadData()
         inputTextField.text = ""
         scrollToBottom()
