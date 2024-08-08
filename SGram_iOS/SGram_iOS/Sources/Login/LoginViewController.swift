@@ -2,6 +2,7 @@ import Foundation
 import SnapKit
 import Then
 import UIKit
+import Moya
 
 class LoginViewController: UIViewController {
     
@@ -20,13 +21,15 @@ class LoginViewController: UIViewController {
     
     
     private let SignupButton = UIButton().then {
-        $0.setTitle("회원가입하러가기", for: .highlighted)
+        $0.setTitle("회원가입", for: .normal)
+        $0.setTitleColor(.blue, for: .normal)
         $0.addTarget(self, action: #selector(goSignup), for: .touchUpInside)
     }
     
     @objc func goSignup() {
         self.navigationController?.pushViewController(SignupViewController(), animated: true)
     }
+    
     
     
     @objc func loginButtontap(){
@@ -38,8 +41,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.hidesBackButton = true
         
         loginbutton.buttonTitle = "로그인"
+        
       
         
 
@@ -49,7 +54,7 @@ class LoginViewController: UIViewController {
     
     
     func layout() {
-        [titleLabel, idInputTF, pwInputTF, loginbutton, suggestionView].forEach { view.addSubview($0) }
+        [titleLabel, idInputTF, pwInputTF, loginbutton, SignupButton].forEach { view.addSubview($0) }
         
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(80.0)
@@ -73,14 +78,19 @@ class LoginViewController: UIViewController {
         }
         
         loginbutton.snp.makeConstraints {
-            $0.top.equalTo(pwInputTF.snp.bottom).offset(110)
+            $0.top.equalTo(pwInputTF.snp.bottom).offset(50)
             $0.leading.trailing.equalToSuperview().inset(24)
             $0.height.equalTo(52)
         }
         
-        suggestionView.snp.makeConstraints {
+        SignupButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.bottom.equalToSuperview().inset(180)
+            $0.top.equalTo(loginbutton.snp.bottom).offset(30)
         }
+        
+//        suggestionView.snp.makeConstraints {
+//            $0.centerX.equalToSuperview()
+//            $0.bottom.equalToSuperview().inset(180)
+//        }
     }
 }

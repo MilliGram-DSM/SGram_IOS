@@ -26,8 +26,10 @@ class SGSuggestionView: UIView {
         [messageLabel, moveButton].forEach { addSubview($0) }
     }
     
-    @objc func nextButtonPressed(_ sender: UIButton) {
+    @objc func nextButtonPressed() {
         buttonTapped?()
+//        navigationController?.pushViewController(SignupViewController, animated: true)
+//        print("네이스")
     }
     
     required init?(coder: NSCoder) {

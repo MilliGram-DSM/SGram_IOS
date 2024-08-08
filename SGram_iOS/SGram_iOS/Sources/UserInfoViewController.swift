@@ -13,4 +13,9 @@ import UIKit
 
 class UserInfoViewController: UIViewController {
     
+    
+    
+    override func viewDidLoad() {
+        view.backgroundColor = .white
+    }
 }
