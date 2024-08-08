@@ -54,10 +54,10 @@ class LoginViewController: UIViewController {
         [titleLabel, idInputTF, pwInputTF, loginbutton, SignupButton].forEach { view.addSubview($0) }
         
         titleLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(80.0)
-            $0.width.equalToSuperview().inset(24.0)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(80)
+            $0.width.equalToSuperview().inset(24)
             $0.centerX.equalToSuperview()
-            $0.height.equalTo(58.0)
+            $0.height.equalTo(58)
         }
         
         idInputTF.snp.makeConstraints {
@@ -68,10 +68,10 @@ class LoginViewController: UIViewController {
         }
         
         pwInputTF.snp.makeConstraints {
-            $0.top.equalTo(idInputTF.snp.bottom).offset(20.0)
-            $0.width.equalToSuperview().inset(24.0)
+            $0.top.equalTo(idInputTF.snp.bottom).offset(20)
+            $0.width.equalToSuperview().inset(24)
             $0.centerX.equalToSuperview()
-            $0.height.equalTo(71.0)
+            $0.height.equalTo(71)
         }
         
         loginbutton.snp.makeConstraints {
