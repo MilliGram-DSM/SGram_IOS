@@ -21,12 +21,13 @@ class LoginViewController: UIViewController {
     
     private let SignupButton = UIButton().then {
         $0.setTitle("회원가입하러가기", for: .highlighted)
-        $0.addTarget(nil, action: #selector(goSignup), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(goSignup), for: .touchUpInside)
     }
     
     @objc func goSignup() {
         self.navigationController?.pushViewController(SignupViewController(), animated: true)
     }
+    
     
     @objc func loginButtontap(){
         self.navigationController?.pushViewController(MainViewController(), animated: true)
