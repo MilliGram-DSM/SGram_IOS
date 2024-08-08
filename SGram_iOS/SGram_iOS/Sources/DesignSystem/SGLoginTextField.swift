@@ -29,6 +29,7 @@ class SGLoginTextField: UIView {
     
     var iconClick = true
     
+    
     let titleLabel = UILabel().then {
         $0.font = .boldSystemFont(ofSize: 16)
     }
@@ -42,7 +43,6 @@ class SGLoginTextField: UIView {
         $0.font = .systemFont(ofSize: 16)
         $0.isSecureTextEntry = false
         $0.keyboardType = .default
-        
     }
     
 

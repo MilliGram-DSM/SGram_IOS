@@ -17,7 +17,6 @@ class chatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         manager = SocketManager(socketURL: URL(string: "http://니엄마1234567.com:8000")!, config: [.log(true), .compress])
         socket = manager.defaultSocket
         
-        
         socket.on(clientEvent: .connect) { data, ack in
             print("Socket connected")
         }
@@ -46,6 +45,8 @@ class chatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         sendButton = UIButton(frame: CGRect(x: self.view.bounds.width - 70, y: self.view.bounds.height - 60, width: 60, height: 40))
         sendButton.setTitle("전송", for: .normal)
+        
+        
         sendButton.setTitleColor(.white, for: .normal)
         sendButton.backgroundColor = .blue
         sendButton.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
@@ -54,6 +55,7 @@ class chatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.view.addSubview(tableView)
         self.view.addSubview(inputTextField)
         self.view.addSubview(sendButton)
+        
     }
     
     @objc func sendMessage() {

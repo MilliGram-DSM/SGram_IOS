@@ -9,7 +9,7 @@ class SignupViewController: UIViewController {
     private let idInputTF = SGLoginTextField(type: .id)
     
     private let pwInputTF = SGLoginTextField(type: .pw)
-        
+    
     private let telTF = SGLoginTextField(type: .tel)
     
     private let suggestionView = SGSuggestionView(message: "벌써 가입했다면?", buttonTitle: "로그인")

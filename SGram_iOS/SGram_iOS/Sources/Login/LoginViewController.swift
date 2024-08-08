@@ -6,7 +6,6 @@ import Moya
 
 class LoginViewController: UIViewController {
     
-    let  viewModel = ViewModel()
     
     
     private let titleLabel = SGLoginTitleLabel(text: "로그인")
