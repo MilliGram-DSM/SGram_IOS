@@ -17,6 +17,7 @@ class SGSuggestionView: UIView {
         $0.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
     }
     
+    
     init(message: String, buttonTitle: String) {
         super.init(frame: .zero)
         

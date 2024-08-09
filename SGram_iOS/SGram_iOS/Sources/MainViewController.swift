@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
    }
     
     @objc func buttonDidTap() {
-        self.navigationController?.pushViewController(chatViewController(), animated: true)
+        self.navigationController?.pushViewController(ChatViewController(), animated: true)
     }
    
    

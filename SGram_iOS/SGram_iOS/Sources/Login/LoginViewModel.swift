@@ -1,2 +1,5 @@
 import Foundation
-import Moya
+
+struct LoginViewModel: Codable {
+    let accessToken: String
+}

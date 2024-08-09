@@ -7,6 +7,9 @@ import Moya
 class LoginViewController: UIViewController {
     
     
+    private let provider = MoyaProvider<AuthAPI>()
+
+    
     
     private let titleLabel = SGLoginTitleLabel(text: "로그인")
     private let idInputTF = SGLoginTextField(type: .id)
@@ -29,14 +32,15 @@ class LoginViewController: UIViewController {
         self.navigationController?.pushViewController(SignupViewController(), animated: true)
     }
     
-    
-    
+   
+
+
     @objc func loginButtontap(){
         self.navigationController?.pushViewController(MainViewController(), animated: true)
     }
     
+    
   
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,10 +48,38 @@ class LoginViewController: UIViewController {
         
         loginbutton.buttonTitle = "로그인"
         
+        func touchLoginButton(){
+            guard let userId = (idInputTF as? UITextField)?.text, !userId.isEmpty else { return }
+            guard let userPw = (pwInputTF as? UITextField)?.text, !userPw.isEmpty else { return }
+           
+            provider.request(.signIn(userId: userId, password: userPw)) { res in
+                   switch res {
+                   case .success(let result):
+                       switch result.statusCode {
+                       case 200:
+                           let decoder = JSONDecoder()
+                           if let data = try? decoder.decode(LoginViewModel.self, from: result.data) {
+                               Token.accessToken = data.accessToken
+                               DispatchQueue.main.async {
+                                   self.dismiss(animated: true)
+                               }
+                           } else {
+                               print("Login: decoder error")
+                           }
+                       default:
+                           print("Login: status \(result.statusCode)")
+                       }
+                   case .failure(let err):
+                       print("Login respons fail: \(err.localizedDescription)")
+                   }
+               }
+           }
+        
         
         view.backgroundColor = .white
         layout()
     }
+    
     
     
     func layout() {
