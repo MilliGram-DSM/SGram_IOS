@@ -171,7 +171,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadMessages() // 화면이 나타날 때 메시지를 불러오기
+        loadMessages()
     }
 
     @objc func sendMessage() {
