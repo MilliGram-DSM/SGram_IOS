@@ -9,7 +9,6 @@ class LoginViewController: UIViewController {
 //    let provider = MoyaProvider<AuthAPI>()
 
     
-    
     private let titleLabel = SGLoginTitleLabel(text: "로그인")
     private let idInputTF = SGLoginTextField(type: .id)
     private let pwInputTF = SGLoginTextField(type: .pw)
@@ -115,10 +114,5 @@ class LoginViewController: UIViewController {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(loginbutton.snp.bottom).offset(30)
         }
-        
-//        suggestionView.snp.makeConstraints {
-//            $0.centerX.equalToSuperview()
-//            $0.bottom.equalToSuperview().inset(180)
-//        }
     }
 }
