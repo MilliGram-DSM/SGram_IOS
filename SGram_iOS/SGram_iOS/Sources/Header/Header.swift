@@ -5,7 +5,7 @@ class AuthService {
     let provider = MoyaProvider<AuthAPI>()
     
     func login(email: String, password: String, completion: @escaping (Result<String, Error>) -> Void) {
-        provider.request(.login(email: email, password: password)) { result in
+        provider.request(.login(account_id: email, password: password)) { result in
             switch result {
             case let .success(response):
                 // 로그인 성공 처리
@@ -31,8 +31,8 @@ class AuthService {
         }
     }
     
-    func signup(email: String, password: String, completion: @escaping (Result<String, Error>) -> Void) {
-        provider.request(.signup(email: email, password: password)) { result in
+    func signup(account_id: String, password: String, phone: String, completion: @escaping (Result<String, Error>) -> Void) {
+        provider.request(.signup(account_id: account_id, password: password, phone: phone)) { result in
             switch result {
             case let .success(response):
                 // 회원가입 성공 처리
@@ -60,25 +60,25 @@ class AuthService {
     
     let authService = AuthService()
 
-    // 로그인 호출 예시
-    func authService;.login(email: "yong08", password: "12345678**") { result in
-        switch result {
-        case let .success(token):
-            print("Login successful, token: \(token)")
-        case let .failure(error):
-            print("Login failed: \(error)")
-        }
-    }
-
-    // 회원가입 호출 예시
-    authService.signup(email: "sexyHyunSuk", password: "sexy6969!") { result in
-        switch result {
-        case let .success(token):
-            print("Signup successful, token: \(token)")
-        case let .failure(error):
-            print("Signup failed: \(error)")
-        }
-    }
+//    // 로그인 호출 예시
+//    authService.login(email: "yong08", password: "12345678**") { result in
+//        switch result {
+//        case let .success(token):
+//            print("Login successful, token: \(token)")
+//        case let .failure(error):
+//            print("Login failed: \(error)")
+//        }
+//    }
+//
+//    // 회원가입 호출 예시
+//    authService.signup(email: "sexyHyunSuk", password: "sexy6969!") { result in
+//        switch result {
+//        case let .success(token):
+//            print("Signup successful, token: \(token)")
+//        case let .failure(error):
+//            print("Signup failed: \(error)")
+//        }
+//    }
 
 }
 
