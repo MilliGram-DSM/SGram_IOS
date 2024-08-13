@@ -6,8 +6,6 @@ import Moya
 
 class LoginViewController: UIViewController {
     
-//    let provider = MoyaProvider<AuthAPI>()
-
     
     private let titleLabel = SGLoginTitleLabel(text: "로그인")
     private let idInputTF = SGLoginTextField(type: .id)
@@ -23,7 +21,7 @@ class LoginViewController: UIViewController {
     private let SignupButton = UIButton().then {
         $0.setTitle("회원가입", for: .normal)
         $0.setTitleColor(.blue, for: .normal)
-        $0.addTarget(self, action: #selector(goSignup), for: .touchUpInside)
+        $0.addTarget(LoginViewController.self, action: #selector(goSignup), for: .touchUpInside)
     }
     
     @objc func goSignup() {
@@ -45,35 +43,7 @@ class LoginViewController: UIViewController {
         self.navigationItem.hidesBackButton = true
         
         loginbutton.buttonTitle = "로그인"
-        
-//        func touchLoginButton(){
-//            guard let userId = (idInputTF as? UITextField)?.text, !userId.isEmpty else { return }
-//            guard let userPw = (pwInputTF as? UITextField)?.text, !userPw.isEmpty else { return }
-//           
-//            provider.request(.signIn(userId: userId, password: userPw)) { res in
-//                   switch res {
-//                   case .success(let result):
-//                       switch result.statusCode {
-//                       case 200:
-//                           let decoder = JSONDecoder()
-//                           if let data = try? decoder.decode(LoginViewModel.self, from: result.data) {
-//                               Token.accessToken = data.accessToken
-//                               DispatchQueue.main.async {
-//                                   self.dismiss(animated: true)
-//                               }
-//                           } else {
-//                               print("Login: decoder error")
-//                           }
-//                       default:
-//                           print("Login: status \(result.statusCode)")
-//                       }
-//                   case .failure(let err):
-//                       print("Login respons fail: \(err.localizedDescription)")
-//                   }
-//               }
-//           }
-//        
-        
+              
         view.backgroundColor = .white
         layout()
     }

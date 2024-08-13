@@ -16,7 +16,7 @@ class SignupViewController: UIViewController {
     
     private let nextbutton = SGLoginButton().then {
         $0.buttonTitle = "회원가입"
-        $0.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
+        $0.addTarget(SignupViewController.self, action: #selector(nextButtonPressed), for: .touchUpInside)
     }
     
     @objc func nextButtonPressed(_ sender: UIButton) {

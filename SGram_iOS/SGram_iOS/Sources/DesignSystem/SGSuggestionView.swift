@@ -14,7 +14,7 @@ class SGSuggestionView: UIView {
     private let moveButton = UIButton(type: .system).then {
         $0.setTitleColor(.blue, for: .normal)
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
+        $0.addTarget(SGSuggestionView.self, action: #selector(nextButtonPressed), for: .touchUpInside)
     }
     
     

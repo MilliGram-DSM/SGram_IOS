@@ -1,24 +1,3 @@
-<<<<<<< Updated upstream
-
-// @main 어트리뷰트를 사용하여 프로그램의 시작점 정의
-@main
-struct MainApp {
-    static func main() {
-        let exampleResponseData = """
-        {
-            "access_token": "Bearer eyJ0eXAiOiJhY2Nlc3MiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqeWsxMDI5IiwiaWF0IjoxNjk2MDgxOTE4LCJleHAiOjE2OTYwODkxMTh9.NGn0ZjFwFB2Iy30Iej2QOQli_bj3A-aW-P_esZ8XU5k",
-            "refresh_token": "Bearer eyJ0eXAiOiJhY2Nlc3MiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqeWsxMDI5IiwiaWF0IjoxNjk2MDgxOTE4LCJleHAiOjE2OTYxNjgzMTh9.yF-I1Y8ZlAEYwmQBtPMLtvbhrfnlwjbCmr5hsCEkOa4"
-        }
-        """.data(using: .utf8)
-        
-        handleResponse(statusCode: 200, responseData: exampleResponseData)
-    }
-}
-
-
-
-=======
->>>>>>> Stashed changes
 import Foundation
 
 struct Token {
@@ -123,63 +102,6 @@ struct MainApp {
         handleResponse(statusCode: 200, responseData: exampleResponseData)
     }
 }
-
-
-
-import Foundation
-
-struct token {
-    static var _accessToken: String?
-    static var accessToken: String? {
-        get {
-            _accessToken = UserDefaults.standard.string(forKey: "accessToken")
-            return _accessToken
-        }
-
-        set(newToken) {
-            UserDefaults.standard.set(newToken, forKey: "accessToken")
-            UserDefaults.standard.synchronize()
-            _accessToken = UserDefaults.standard.string(forKey: "accessToken")
-        }
-    }
-
-    static var _refreshToken: String?
-    static var refreshToken: String? {
-        get {
-            _refreshToken = UserDefaults.standard.string(forKey: "refreshToken")
-            return _refreshToken
-        }
-
-        set(newRefreshToken) {
-            UserDefaults.standard.set(newRefreshToken, forKey: "refreshToken")
-            UserDefaults.standard.synchronize()
-            _refreshToken = UserDefaults.standard.string(forKey: "refreshToken")
-        }
-    }
-    
-    static func removeToken() {
-        accessToken = nil
-        refreshToken = nil
-    }
-}
-
-enum header {
-    case accessToken, tokenIsEmpty
-
-    func header() -> [String: String]? {
-        guard let token = Token.accessToken else {
-            return ["Content-Type": "application/json"]
-        }
-        
-        switch self {
-        case .accessToken:
-            return ["Authorization": "Bearer " + token, "Content-Type": "application/json"]
-        case .tokenIsEmpty:
-            return ["Content-Type": "application/json"]
-        }
-    }
-}
-
 // 네트워크 요청을 수행하는 함수
 func makeNetworkRequest(completion: @escaping (Result<String, Error>) -> Void) {
     let url = URL(string: "https://api.example.com/endpoint")!
@@ -229,13 +151,3 @@ func makeNetworkRequest(completion: @escaping (Result<String, Error>) -> Void) {
     
     task.resume()
 }
-
-// 사용 예시
-//makeNetworkRequest { result in
-//    switch result {
-//    case .success(let message):
-//        print(message)
-//    case .failure(let error):
-//        print("Error: \(error.localizedDescription)")
-//    }
-//}
