@@ -41,7 +41,7 @@ class SignupViewController: UIViewController {
     
     func layout() {
         titleLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(80.0)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(80)
             $0.width.equalToSuperview().inset(24)
             $0.centerX.equalToSuperview()
         }

@@ -1,51 +1,69 @@
 import UIKit
-import SocketIO
+import Starscream
 
-class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, WebSocketDelegate {
+    func didReceive(event: Starscream.WebSocketEvent, client: any Starscream.WebSocketClient) {
+        <#code#>
+    }
+    
 
     var tableView: UITableView!
     var inputTextField: UITextField!
     var sendButton: UIButton!
     var messages: [(String, String)] = [] // 아이디, 메시지
-    var manager: SocketManager!
-    var socket: SocketIOClient!
+    var socket: WebSocket!
     var userId: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupSocket()
+        setupWebSocket()
         setupUI()
         loadMessages() // 저장된 메시지를 불러오기
     }
 
-    func setupSocket() {
-        manager = SocketManager(socketURL: URL(string: "http://니엄마1234567.com:8000")!, config: [.log(true), .compress])
-        socket = manager.defaultSocket
-        
-        socket.on(clientEvent: .connect) { data, ack in
-            print("Socket connected")
-        }
-
-        socket.on("userId") { data, ack in
-            if let id = data[0] as? String {
-                self.userId = id
-                print("User ID: \(id)")
-            }
-        }
-
-        socket.on("message") { data, ack in
-            if let messageData = data[0] as? [String: Any],
-               let message = messageData["message"] as? String,
-               let senderId = messageData["userId"] as? String {
-                self.messages.append((senderId, message))
-                self.tableView.reloadData()
-                self.scrollToBottom()
-                self.saveMessages() // 메시지를 저장
-            }
-        }
-
+    func setupWebSocket() {
+        var request = URLRequest(url: URL(string: "ws://니엄마1234567.com:8000/ws")!) // WebSocket URL
+        request.timeoutInterval = 5
+        socket = WebSocket(request: request)
+        socket.delegate = self
         socket.connect()
+    }
+
+    func websocketDidConnect(socket: WebSocketClient) {
+        print("WebSocket 연결됨")
+        // 서버에 사용자 ID 요청 (서버에서 사용자 ID를 제공해야 함)
+        let userIdRequest = ["action": "getUserId"]
+        if let jsonData = try? JSONSerialization.data(withJSONObject: userIdRequest, options: []) {
+            socket.write(data: jsonData)
+        }
+    }
+
+    func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
+        print("WebSocket 연결 해제됨: \(String(describing: error))")
+    }
+
+    func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
+        print("서버로부터 메시지 수신: \(text)")
+        
+        if let messageData = text.data(using: .utf8) {
+            do {
+                if let json = try JSONSerialization.jsonObject(with: messageData, options: []) as? [String: Any],
+                   let message = json["message"] as? String,
+                   let senderId = json["userId"] as? String {
+                    self.messages.append((senderId, message))
+                    self.tableView.reloadData()
+                    self.scrollToBottom()
+                    self.saveMessages() // 메시지를 저장
+                }
+            } catch {
+                print("JSON 파싱 오류: \(error)")
+            }
+        }
+    }
+
+    func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
+        print("서버로부터 데이터 수신")
     }
 
     func setupUI() {
@@ -78,9 +96,11 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         guard let text = inputTextField.text, !text.isEmpty, let userId = userId else { return }
 
         let messageData: [String: Any] = ["userId": userId, "message": text]
-        socket.emit("message", messageData)
+        if let jsonData = try? JSONSerialization.data(withJSONObject: messageData, options: []) {
+            socket.write(data: jsonData)
+        }
+
         messages.append((userId, "나: \(text)"))
-        
         tableView.reloadData()
         inputTextField.text = ""
         scrollToBottom()
