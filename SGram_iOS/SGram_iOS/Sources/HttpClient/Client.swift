@@ -2,8 +2,8 @@ import Moya
 import Foundation
 
 enum AuthAPI {
-    case login(account_id: String, password: String)
-    case signup(account_id: String, password: String, phone: String)
+    case login(accountId: String, password: String)
+    case signup(accountId: String, password: String, phone: String)
 }
 
 extension AuthAPI: TargetType {
@@ -16,7 +16,7 @@ extension AuthAPI: TargetType {
         case .login:
             return "/login"
         case .signup:
-            return "/signup"
+            return "/join"
         }
     }
 
@@ -29,12 +29,24 @@ extension AuthAPI: TargetType {
 
     var task: Task {
         switch self {
-        case .login(let account_id, let password):
-            let params: [String: Any] = ["email": account_id, "password": password]
-            return .requestParameters(parameters: params, encoding: JSONEncoding.default)
-        case .signup(let account_id, let password, let phone):
-            let params: [String: Any] = ["email": account_id, "password": password, "phone": phone]
-            return .requestParameters(parameters: params, encoding: JSONEncoding.default)
+        case let .login(accountId, password):
+            return .requestParameters(
+                parameters: [
+                    "account_id": accountId,
+                    "password": password
+                ],
+                encoding: JSONEncoding.default
+            )
+
+        case let .signup(accountId, password, phone):
+            return .requestParameters(
+                parameters: [
+                    "account_id": accountId,
+                    "password": password,
+                    "phone": phone
+                ],
+                encoding: JSONEncoding.default
+            )
         }
     }
 

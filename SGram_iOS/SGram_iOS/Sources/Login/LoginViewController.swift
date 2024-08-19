@@ -5,34 +5,54 @@ import UIKit
 import Moya
 
 class LoginViewController: UIViewController {
-    
-    
+    let authService = AuthService()
+
     private let titleLabel = SGLoginTitleLabel(text: "로그인")
     private let idInputTF = SGLoginTextField(type: .id)
     private let pwInputTF = SGLoginTextField(type: .pw)
     
     private let loginbutton = SGLoginButton().then {
-        $0.addTarget(nil, action: #selector(loginButtontap), for: .touchUpInside)
-
+        $0.addTarget(self, action: #selector(loginButtontap), for: .touchUpInside)
     }
-    private let suggestionView = SGSuggestionView(message: "회원가입을 안했다면?", buttonTitle: "회원가입")
+    private let suggestionView = SGSuggestionView(
+        message: "회원가입을 안했다면?",
+        buttonTitle: "회원가입"
+    )
     
     
     private let SignupButton = UIButton().then {
         $0.setTitle("회원가입", for: .normal)
         $0.setTitleColor(.blue, for: .normal)
-        $0.addTarget(LoginViewController.self, action: #selector(goSignup), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(goSignup), for: .touchUpInside)
     }
     
     @objc func goSignup() {
+//        authService.signup(account_id: "", password: "", phone: "") { result in
+//            switch result {
+//            case let .success(token):
+//                print("Signup successful, token: \(token)")
+//            case let .failure(error):
+//                print("Signup failed: \(error)")
+//            }
+//        }
+
         self.navigationController?.pushViewController(SignupViewController(), animated: true)
     }
-    
-   
-
 
     @objc func loginButtontap(){
-        self.navigationController?.pushViewController(MainViewController(), animated: true)
+//        authService.login(accountId: "", password: "") { result in
+//            switch result {
+//            case let .success(token):
+//                print("Login successful, token: \(token)")
+//            case let .failure(error):
+//                print("Login failed: \(error)")
+//            }
+//        }
+
+        self.navigationController?.pushViewController(
+            MainViewController(),
+            animated: true
+        )
     }
     
     
@@ -51,7 +71,13 @@ class LoginViewController: UIViewController {
     
     
     func layout() {
-        [titleLabel, idInputTF, pwInputTF, loginbutton, SignupButton].forEach { view.addSubview($0) }
+        [
+            titleLabel,
+            idInputTF,
+            pwInputTF,
+            loginbutton,
+            SignupButton
+        ].forEach { view.addSubview($0) }
         
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(80)

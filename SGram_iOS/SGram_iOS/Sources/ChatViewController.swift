@@ -1,7 +1,7 @@
 import UIKit
 import Starscream
 
-class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, WebSocketDelegate {
+class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 //    func didReceive(event: Starscream.WebSocketEvent, client: any Starscream.WebSocketClient) {
 //        switch event {
 //        case .connected(<#T##[String : String]#>)
@@ -28,7 +28,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         var request = URLRequest(url: URL(string: "ws://니엄마1234567.com:8000/ws")!) // WebSocket URL
         request.timeoutInterval = 5
         socket = WebSocket(request: request)
-        socket.delegate = self
+//        socket.delegate = self
         socket.connect()
     }
 
@@ -141,31 +141,31 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 }
 
-extension ChatViewController: WebSocketDelegate {
-    func didReceive(event: WebSocketEvent, client: WebSocketClient) {
-        switch event {
-        case .disconnected(_, _):
-            <#code#>
-        case .text(_):
-            <#code#>
-        case .binary(_):
-            <#code#>
-        case .pong(_):
-            <#code#>
-        case .ping(_):
-            <#code#>
-        case .error(_):
-            <#code#>
-        case .viabilityChanged(_):
-            <#code#>
-        case .reconnectSuggested(_):
-            <#code#>
-        case .cancelled:
-            <#code#>
-        case .peerClosed:
-            <#code#>
-        case .connected(_):
-            <#code#>
-        }
-    }
-}
+//extension ChatViewController: WebSocketDelegate {
+//    func didReceive(event: WebSocketEvent, client: WebSocketClient) {
+//        switch event {
+//        case .disconnected(_, _):
+//            <#code#>
+//        case .text(_):
+//            <#code#>
+//        case .binary(_):
+//            <#code#>
+//        case .pong(_):
+//            <#code#>
+//        case .ping(_):
+//            <#code#>
+//        case .error(_):
+//            <#code#>
+//        case .viabilityChanged(_):
+//            <#code#>
+//        case .reconnectSuggested(_):
+//            <#code#>
+//        case .cancelled:
+//            <#code#>
+//        case .peerClosed:
+//            <#code#>
+//        case .connected(_):
+//            <#code#>
+//        }
+//    }
+//}
