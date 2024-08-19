@@ -2,9 +2,11 @@ import UIKit
 import Starscream
 
 class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, WebSocketDelegate {
-    func didReceive(event: Starscream.WebSocketEvent, client: any Starscream.WebSocketClient) {
-        <#code#>
-    }
+//    func didReceive(event: Starscream.WebSocketEvent, client: any Starscream.WebSocketClient) {
+//        switch event {
+//        case .connected(<#T##[String : String]#>)
+//        }
+//    }
     
 
     var tableView: UITableView!
@@ -135,6 +137,35 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if let savedMessages = UserDefaults.standard.array(forKey: "chatMessages") as? [[String: String]] {
             messages = savedMessages.map { ($0["userId"] ?? "", $0["message"] ?? "") }
             tableView.reloadData()
+        }
+    }
+}
+
+extension ChatViewController: WebSocketDelegate {
+    func didReceive(event: WebSocketEvent, client: WebSocketClient) {
+        switch event {
+        case .disconnected(_, _):
+            <#code#>
+        case .text(_):
+            <#code#>
+        case .binary(_):
+            <#code#>
+        case .pong(_):
+            <#code#>
+        case .ping(_):
+            <#code#>
+        case .error(_):
+            <#code#>
+        case .viabilityChanged(_):
+            <#code#>
+        case .reconnectSuggested(_):
+            <#code#>
+        case .cancelled:
+            <#code#>
+        case .peerClosed:
+            <#code#>
+        case .connected(_):
+            <#code#>
         }
     }
 }

@@ -60,25 +60,26 @@ class AuthService {
     
     let authService = AuthService()
 
-//    // 로그인 호출 예시
-//    authService.login(email: "yong08", password: "12345678**") { result in
-//        switch result {
-//        case let .success(token):
-//            print("Login successful, token: \(token)")
-//        case let .failure(error):
-//            print("Login failed: \(error)")
-//        }
-//    }
-//
-//    // 회원가입 호출 예시
-//    authService.signup(email: "sexyHyunSuk", password: "sexy6969!") { result in
-//        switch result {
-//        case let .success(token):
-//            print("Signup successful, token: \(token)")
-//        case let .failure(error):
-//            print("Signup failed: \(error)")
-//        }
-//    }
+    // 로그인 호출 예시
+    authService.login(email: "yong08", password: "12345678**") { result in
+        switch result {
+        case let .success(token):
+            print("Login successful, token: \(token)")
+        case let .failure(error):
+            print("Login failed: \(error)")
+        }
+    }
+    
+
+    // 회원가입 호출 예시
+    authService.signup(email: "sexyHyunSuk", password: "sexy6969!") { result in
+        switch result {
+        case let .success(token):
+            print("Signup successful, token: \(token)")
+        case let .failure(error):
+            print("Signup failed: \(error)")
+        }
+    }
 
 }
 
