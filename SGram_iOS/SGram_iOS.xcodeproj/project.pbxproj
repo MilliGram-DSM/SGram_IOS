@@ -27,6 +27,7 @@
 		6FD3F1C62C63B7B800435961 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6FD3F1C52C63B7B800435961 /* SnapKit */; };
 		6FEA19C82C73899B003F116C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA19C72C73899B003F116C /* LoginViewModel.swift */; };
 		6FEA19CA2C7389FE003F116C /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA19C92C7389FE003F116C /* SignupViewModel.swift */; };
+		90777A942C749EFB002A3731 /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90777A932C749EFB002A3731 /* MoyaLoggingPlugin.swift */; };
 		90CEC39F2C64935400ACFB78 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90CEC39E2C64935400ACFB78 /* CombineMoya */; };
 		90CEC3A12C64935400ACFB78 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 90CEC3A02C64935400ACFB78 /* Moya */; };
 		90CEC3A32C64935400ACFB78 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90CEC3A22C64935400ACFB78 /* ReactiveMoya */; };
@@ -53,6 +54,7 @@
 		6FD3F1BB2C63B1B800435961 /* SGSuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGSuggestionView.swift; sourceTree = "<group>"; };
 		6FEA19C72C73899B003F116C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		6FEA19C92C7389FE003F116C /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		90777A932C749EFB002A3731 /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				6FADAD082C6631BF00A7A3AE /* Header.swift */,
+				90777A932C749EFB002A3731 /* MoyaLoggingPlugin.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				6FADAD092C6631BF00A7A3AE /* Header.swift in Sources */,
 				6FD3F1B62C63B18B00435961 /* SGLoginButton.swift in Sources */,
 				6FD3F1BC2C63B1B800435961 /* SGSuggestionView.swift in Sources */,
+				90777A942C749EFB002A3731 /* MoyaLoggingPlugin.swift in Sources */,
 				6F9DD3902C63AA5F00B8BFE4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

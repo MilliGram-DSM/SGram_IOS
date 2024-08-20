@@ -3,6 +3,7 @@ import SnapKit
 import Then
 
 class SignupViewController: UIViewController {
+    let authService = AuthService()
     
     private let titleLabel = SGLoginTitleLabel(text: "회원가입")
     
@@ -12,7 +13,12 @@ class SignupViewController: UIViewController {
     
     private let telTF = SGLoginTextField(type: .tel)
     
-    private let suggestionView = SGSuggestionView(message: "벌써 가입했다면?", buttonTitle: "로그인")
+//    private let suggestionView = SGSuggestionView(message: "벌써 가입했다면?", buttonTitle: "로그인")
+    private let suggestionButton = UIButton().then {
+        $0.setTitle("로그인 GOGO", for: .normal)
+        $0.addTarget(self, action: #selector(suggestionButtonDidTap), for: .touchUpInside)
+        $0.setTitleColor(.blue, for: .normal)
+    }
     
     private let nextbutton = SGLoginButton().then {
         $0.buttonTitle = "회원가입"
@@ -20,6 +26,22 @@ class SignupViewController: UIViewController {
     }
 
     @objc func nextButtonPressed(_ sender: UIButton) {
+        authService.signup(
+            account_id: idInputTF.textField.text!,
+            password: pwInputTF.textField.text!,
+            phone: telTF.textField.text!
+        ) { result in
+            switch result {
+            case .success(let success):
+                self.navigationController?.popViewController(animated: true)
+            case .failure(let failure):
+                print(failure)
+                return
+            }
+        }
+    }
+    
+    @objc func suggestionButtonDidTap() {
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -28,13 +50,10 @@ class SignupViewController: UIViewController {
    
         self.navigationItem.hidesBackButton = true
         
-        [titleLabel, idInputTF, pwInputTF, suggestionView, nextbutton, telTF].forEach { view.addSubview($0) }
+        [titleLabel, idInputTF, pwInputTF, suggestionButton, nextbutton, telTF].forEach { view.addSubview($0) }
         
         self.view.backgroundColor = .white
         
-        suggestionView.buttonTapped = {
-            self.navigationController?.popViewController(animated: true)
-        }
         
         layout()
     }
@@ -65,13 +84,13 @@ class SignupViewController: UIViewController {
             $0.centerX.equalToSuperview()
         }
         
-        suggestionView.snp.makeConstraints {
+        suggestionButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(telTF.snp.bottom).offset(20)
         }
         
         nextbutton.snp.makeConstraints {
-            $0.top.equalTo(suggestionView.snp.bottom).offset(20)
+            $0.top.equalTo(suggestionButton.snp.bottom).offset(20)
             $0.centerX.equalToSuperview()
             $0.leading.trailing.equalToSuperview().inset(24)
         }

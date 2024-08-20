@@ -1,5 +1,9 @@
 import Foundation
 
-struct LoginModel: Codable {
+struct LoginModel: Decodable {
     let accessToken: String
+
+    enum CodingKeys: String, CodingKey {
+        case accessToken = "access_token"
+    }
 }

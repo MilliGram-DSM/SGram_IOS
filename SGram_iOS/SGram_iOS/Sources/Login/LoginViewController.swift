@@ -14,45 +14,33 @@ class LoginViewController: UIViewController {
     private let loginbutton = SGLoginButton().then {
         $0.addTarget(self, action: #selector(loginButtontap), for: .touchUpInside)
     }
-    private let suggestionView = SGSuggestionView(
-        message: "회원가입을 안했다면?",
-        buttonTitle: "회원가입"
-    )
     
     
-    private let SignupButton = UIButton().then {
+    private let signupButton = UIButton().then {
         $0.setTitle("회원가입", for: .normal)
         $0.setTitleColor(.blue, for: .normal)
         $0.addTarget(self, action: #selector(goSignup), for: .touchUpInside)
     }
     
     @objc func goSignup() {
-//        authService.signup(account_id: "", password: "", phone: "") { result in
-//            switch result {
-//            case let .success(token):
-//                print("Signup successful, token: \(token)")
-//            case let .failure(error):
-//                print("Signup failed: \(error)")
-//            }
-//        }
 
         self.navigationController?.pushViewController(SignupViewController(), animated: true)
     }
 
     @objc func loginButtontap(){
-//        authService.login(accountId: "", password: "") { result in
-//            switch result {
-//            case let .success(token):
-//                print("Login successful, token: \(token)")
-//            case let .failure(error):
-//                print("Login failed: \(error)")
-//            }
-//        }
+        authService.login(
+            accountId: idInputTF.textField.text!,
+            password: pwInputTF.textField.text!
+        ) { result in
+            switch result {
+            case let .success(token):
+                print("Login successful, token: \(token)")
+                self.navigationController?.pushViewController(MainViewController(), animated: true)
+            case let .failure(error):
+                print("Login failed: \(error)")
+            }
+        }
 
-        self.navigationController?.pushViewController(
-            MainViewController(),
-            animated: true
-        )
     }
     
     
@@ -76,7 +64,7 @@ class LoginViewController: UIViewController {
             idInputTF,
             pwInputTF,
             loginbutton,
-            SignupButton
+            signupButton
         ].forEach { view.addSubview($0) }
         
         titleLabel.snp.makeConstraints {
@@ -106,7 +94,7 @@ class LoginViewController: UIViewController {
             $0.height.equalTo(52)
         }
         
-        SignupButton.snp.makeConstraints {
+        signupButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(loginbutton.snp.bottom).offset(30)
         }

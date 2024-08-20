@@ -14,9 +14,9 @@ extension AuthAPI: TargetType {
     var path: String {
         switch self {
         case .login:
-            return "/login"
+            return "/users/login"
         case .signup:
-            return "/join"
+            return "/users/join"
         }
     }
 
