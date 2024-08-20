@@ -12,7 +12,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var tableView: UITableView!
     var inputTextField: UITextField!
     var sendButton: UIButton!
-    var messages: [(String, String)] = [] // 아이디, 메시지
+    var messages: [(String, String)] = []
     var socket: WebSocket!
     var userId: String?
 
@@ -21,20 +21,20 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         setupWebSocket()
         setupUI()
-        loadMessages() // 저장된 메시지를 불러오기
+        loadMessages()
     }
 
     func setupWebSocket() {
         var request = URLRequest(url: URL(string: "ws://니엄마1234567.com:8000/ws")!) // WebSocket URL
         request.timeoutInterval = 5
         socket = WebSocket(request: request)
-//        socket.delegate = self
+
         socket.connect()
     }
 
     func websocketDidConnect(socket: WebSocketClient) {
         print("WebSocket 연결됨")
-        // 서버에 사용자 ID 요청 (서버에서 사용자 ID를 제공해야 함)
+        
         let userIdRequest = ["action": "getUserId"]
         if let jsonData = try? JSONSerialization.data(withJSONObject: userIdRequest, options: []) {
             socket.write(data: jsonData)
@@ -56,7 +56,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     self.messages.append((senderId, message))
                     self.tableView.reloadData()
                     self.scrollToBottom()
-                    self.saveMessages() // 메시지를 저장
+                    self.saveMessages()
                 }
             } catch {
                 print("JSON 파싱 오류: \(error)")
@@ -106,7 +106,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.reloadData()
         inputTextField.text = ""
         scrollToBottom()
-        saveMessages() // 메시지를 저장
+        saveMessages()
     }
 
     func scrollToBottom() {
@@ -126,13 +126,13 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
 
-    // 메시지 저장
+
     func saveMessages() {
         let messagesToSave = messages.map { ["userId": $0.0, "message": $0.1] }
         UserDefaults.standard.set(messagesToSave, forKey: "chatMessages")
     }
 
-    // 저장된 메시지 불러오기
+
     func loadMessages() {
         if let savedMessages = UserDefaults.standard.array(forKey: "chatMessages") as? [[String: String]] {
             messages = savedMessages.map { ($0["userId"] ?? "", $0["message"] ?? "") }
@@ -140,32 +140,3 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
 }
-
-//extension ChatViewController: WebSocketDelegate {
-//    func didReceive(event: WebSocketEvent, client: WebSocketClient) {
-//        switch event {
-//        case .disconnected(_, _):
-//            <#code#>
-//        case .text(_):
-//            <#code#>
-//        case .binary(_):
-//            <#code#>
-//        case .pong(_):
-//            <#code#>
-//        case .ping(_):
-//            <#code#>
-//        case .error(_):
-//            <#code#>
-//        case .viabilityChanged(_):
-//            <#code#>
-//        case .reconnectSuggested(_):
-//            <#code#>
-//        case .cancelled:
-//            <#code#>
-//        case .peerClosed:
-//            <#code#>
-//        case .connected(_):
-//            <#code#>
-//        }
-//    }
-//}
