@@ -19,7 +19,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     func setupWebSocket() {
-        var request = URLRequest(url: URL(string: "http://172.20.10.3:8080/users/login")!)
+        var request = URLRequest(url: URL(string: "http://172.20.10.3:8080")!)
         request.timeoutInterval = 5
         socket = WebSocket(request: request)
 
