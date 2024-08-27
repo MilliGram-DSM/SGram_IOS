@@ -1,60 +1,39 @@
-import Moya
 import Foundation
 
-class AuthService {
-    let provider = MoyaProvider<AuthAPI>(plugins: [MoyaLogginPlugin()])
-    
-    func login(
-        accountId: String,
-        password: String,
-        completion: @escaping (Result<String, Error>) -> Void
-    ) {
-        provider.request(
-            .login(
-                accountId: accountId,
-                password: password
-            )
-        ) { result in
-            switch result {
-            case let .success(response):
-                if response.statusCode == 200 {
-                    do {
-                        let data = try JSONDecoder().decode(LoginModel.self, from: response.data)
-                        print(data.accessToken)
-                        UserDefaults.standard.set(data.accessToken, forKey: "Key")
-                        print(UserDefaults.standard.set(data.accessToken, forKey: "Key"))
-                    } catch {
-                        completion(.failure(error))
-                    }
-                } else {
-                    completion(.failure(NSError(domain: "", code: response.statusCode, userInfo: nil)))
-                }
-            case let .failure(error):
-                completion(.failure(error))
-            }
+struct Token {
+    static var _accessToken: String?
+    static var accessToken: String? {
+        get {
+           _accessToken = UserDefaults.standard.string(forKey: "accessToken")
+           return _accessToken
+        }
+
+        set(newToken) {
+            UserDefaults.standard.set(newToken, forKey: "accessToken")
+            UserDefaults.standard.synchronize()
+            _accessToken = UserDefaults.standard.string(forKey: "accessToken")
         }
     }
     
-    func signup(
-        account_id: String,
-        password: String,
-        phone: String,
-        completion: @escaping (Result<Void, Error>) -> Void
-    ) {
-        provider.request(
-            .signup(
-                accountId: account_id,
-                password: password,
-                phone: phone
-            )
-        ) { result in
-            switch result {
-            case let .success(response):
-                completion(.success(()))
+    static func removeToken() {
+        accessToken = nil
+    }
+}
 
-            case let .failure(error):
-                completion(.failure(error))
-            }
+enum Header {
+    case accessToken, tokenIsEmpty
+
+    func header() -> [String : String]? {
+        guard let token = Token.accessToken else {
+            return ["Contect-Type" : "application/json"]
+        }
+        
+        switch self {
+        case .accessToken:
+            return ["Authorization" : "Bearer " + token, "Contect-Type" : "application/json"]
+
+        case .tokenIsEmpty:
+            return ["Contect-Type" : "application/json"]
         }
     }
 }

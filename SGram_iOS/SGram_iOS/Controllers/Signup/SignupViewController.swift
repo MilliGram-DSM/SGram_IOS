@@ -81,7 +81,7 @@ class SignupViewController: UIViewController {
         telTF.snp.makeConstraints {
             $0.top.equalTo(pwInputTF.snp.bottom).offset(20)
             $0.width.equalToSuperview().inset(24)
-            $0.centerX.equalToSuperview()
+            $0.centerX.equalToSuperview();
         }
         
         suggestionButton.snp.makeConstraints {
